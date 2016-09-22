@@ -9,15 +9,15 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
-    # @post = Post.new(post_params)
-    #
-    # if @post.valid?
-    #   @post.save
+    # Post.create(post_params)
+    @post = Post.new(post_params)
+
+    if @post.valid?
+      @post.save
       redirect_to post_path(@post)
-    # else
-    #   render :new
-    # end
+    else
+      render :new
+    end
   end
 
   def edit

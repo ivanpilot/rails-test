@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   attr_reader :category_name
 
   def category_name=(name)
-    self.category = Category.find_or_create_by(name: name).id
+    self.category = Category.find_or_create_by(name: name)#.id
   end
 
 end
